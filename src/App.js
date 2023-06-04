@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, startTransition } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+const Home = lazy(() => {
+  return new Promise((resolve) => {
+    startTransition(() => {
+      resolve(import("./pages/Home"));
+    });
+  });
+});
+
+const Figure = lazy(() => {
+  return new Promise((resolve) => {
+    startTransition(() => {
+      resolve(import("./pages/Figure"))
+    })
+  });
+});
+
+const Redirect = lazy(() => {
+  return new Promise((resolve) => {
+    startTransition(() => {
+      resolve(import("./pages/Redirect"))
+    })
+  });
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/request" element={<Figure/>} />
+        <Route path="*" element={<Redirect/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
