@@ -45,7 +45,7 @@ const Home = () => {
                 try {
                     const response = await axios.post(url+'/request', data);
                     if (response.status === 200) {
-                        navigate('/request?xid=' + response.data.data.xid);
+                        navigate('/sequence_logo_react/request?xid=' + response.data.data.xid);
                     }
                 } catch (error) {
                     console.log(error);

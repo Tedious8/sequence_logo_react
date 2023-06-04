@@ -22,7 +22,7 @@ const Figure = () => {
                     setLoading(false);
                 } else {
                     alert(response.data.message);
-                    navigate('/');
+                    navigate('/sequence_logo_react/');
                 }
             } catch (error) {
                 console.log(error);
