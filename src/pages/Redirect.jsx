@@ -7,7 +7,7 @@ const Redirect = () => {
     useEffect(() => {
         async function redirect() {
             await sleep(2000);
-            navigate('/sequence_logo_react/');
+            navigate('/sequence_logo_react');
         }
         redirect();
     }, [navigate])

@@ -29,7 +29,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/sequence_logo_react/" element={<Home/>} />
+        <Route path="/sequence_logo_react" element={<Home/>} />
         <Route path="/sequence_logo_react/request" element={<Figure/>} />
         <Route path="*" element={<Redirect/>} />
       </Routes>

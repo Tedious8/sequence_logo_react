@@ -26,7 +26,7 @@ const Logo = ({data}) => {
     }
 
     function Return() {
-        navigate('/sequence_logo_react/')
+        navigate('/sequence_logo_react')
     }
 
     return (
